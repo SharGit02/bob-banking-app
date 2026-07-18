@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — BankApp{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container" style="max-width: 760px;">
+    <span class="navbar-brand">BankApp</span>
+    <div class="ms-auto">
+      <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-light btn-sm">Logout</a>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h5 class="text-muted mb-1">Welcome back,</h5>
+<h2 class="mb-4">{{ account.name }}</h2>
+
+<div class="card mb-4">
+  <div class="card-body text-center py-4">
+    <p class="text-muted mb-1" style="font-size: 14px;">Current Balance</p>
+    <p class="balance-display mb-0">${{ "%.2f"|format(account.balance) }}</p>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-6">
+    <a href="{{ url_for('transactions.deposit') }}" class="btn btn-success btn-lg w-100">
+      Deposit
+    </a>
+  </div>
+  <div class="col-6">
+    <a href="{{ url_for('transactions.withdraw') }}" class="btn btn-warning btn-lg w-100">
+      Withdraw
+    </a>
+  </div>
+</div>
+{% endblock %}
