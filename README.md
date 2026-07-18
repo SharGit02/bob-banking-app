@@ -58,4 +58,4 @@ bob-banking-app/
 ```
 
 ---
-Built with [IBM Bob](https://ibm.com) during the Banking App Workshop.
+Built with [IBM Bob](https://ibm.com) during the IBM BOB Workshop.
